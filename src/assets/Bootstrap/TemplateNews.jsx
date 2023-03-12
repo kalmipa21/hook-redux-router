@@ -15,7 +15,7 @@ function TemplateNews({
         <Card className="w-100 h-100">
           <Card.Img variant="top" src={urlToImages || defaultImage} alt="" />
           <Card.Body>
-            <Card.Title className="searchable">
+            <Card.Title>
               <a href={urls}>{titles}</a>
             </Card.Title>
             <Card.Subtitle className="mb-2 text-muted searchable">
