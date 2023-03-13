@@ -22,7 +22,7 @@ const counterReducer = (state = initialState, actions) => {
     // case "ACTION_WORDING":
     //   return {
     //     ...state,
-    //     count: actions.value,
+    //     wording: actions.wording,
     //   };
     default:
       return state;
