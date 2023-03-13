@@ -4,11 +4,14 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { RouterProvider } from "react-router-dom";
 import ROUTER from "./routers/index.js";
-
+import { Provider } from "react-redux";
+import STORE from "./app/store.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={ROUTER} />
+    <Provider store={STORE}>
+      <RouterProvider router={ROUTER} />
+    </Provider>
   </React.StrictMode>
 );
 

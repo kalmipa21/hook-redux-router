@@ -1,7 +1,12 @@
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { NavLink, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const Header = () => {
   const location = useLocation();
+  const { count } = useSelector((state) => state.counter);
+  // const title = useSelector((state) => state.header);
+
   const isActive = (target) => {
     const { pathname } = location;
     if (pathname === "/") return ["home"].includes(target);
@@ -10,7 +15,7 @@ const Header = () => {
   return (
     <Navbar bg="primary" variant="light">
       <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand href="#home">{count}</Navbar.Brand>
         <Nav className="ms-auto">
           <NavLink to="/" className={isActive("Home") ? "active" : "link"}>
             Home
