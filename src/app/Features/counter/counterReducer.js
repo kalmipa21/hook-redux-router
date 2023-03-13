@@ -1,5 +1,5 @@
 let initialState = {
-  count: 0,
+  hitung: 0,
   wording: "Hai Haii",
 };
 const counterReducer = (state = initialState, actions) => {
@@ -7,12 +7,12 @@ const counterReducer = (state = initialState, actions) => {
     case "ACTION_INC":
       return {
         ...state,
-        count: state.count + actions.value,
+        hitung: state.hitung + actions.value,
       };
     case "ACTION_DEC":
       return {
         ...state,
-        count: state.count - actions.value,
+        hitung: state.hitung - actions.value,
       };
     // case "ACTION_RESET":
     //   return {

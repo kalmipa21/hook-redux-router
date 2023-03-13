@@ -5,11 +5,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { RouterProvider } from "react-router-dom";
 import ROUTER from "./routers/index.js";
 import { Provider } from "react-redux";
-import STORE from "./app/store.js";
+import stores from "./app/store";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={STORE}>
+    <Provider store={stores}>
       <RouterProvider router={ROUTER} />
     </Provider>
   </React.StrictMode>

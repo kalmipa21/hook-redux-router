@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const location = useLocation();
-  const { count } = useSelector((state) => state.counter);
-  // const title = useSelector((state) => state.header);
+  const { hitung } = useSelector((state) => state.name);
+  const title = useSelector((state) => state.header);
 
   const isActive = (target) => {
     const { pathname } = location;
@@ -15,7 +15,9 @@ const Header = () => {
   return (
     <Navbar bg="primary" variant="light">
       <Container>
-        <Navbar.Brand href="#home">{count}</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          {title} {hitung}
+        </Navbar.Brand>
         <Nav className="ms-auto">
           <NavLink to="/" className={isActive("Home") ? "active" : "link"}>
             Home
