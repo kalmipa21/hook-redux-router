@@ -1,34 +1,24 @@
 import { Card, Button, Col } from "react-bootstrap";
-import "../../components/Articles";
 import defaultImage from "../Images/defaultImage.jpg";
-function TemplateNews({
-  titles,
-  descriptions,
-  date,
-  urls,
-  urlToImages,
-  kunci,
-}) {
+function TemplateNews({ titles, descriptions, date, urls, urlToImages, key }) {
   return (
-    <>
-      <Col key={kunci} md={4} sm={6} lg={3} none={12} className="mb-4 d-flex">
-        <Card className="w-100 h-100">
-          <Card.Img variant="top" src={urlToImages || defaultImage} alt="" />
-          <Card.Body>
-            <Card.Title>
-              <a href={urls}>{titles}</a>
-            </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted searchable">
-              {date}
-            </Card.Subtitle>
-            <Card.Text>{descriptions}</Card.Text>
-            <Button href={urls} variant="primary">
-              Go somewhere
-            </Button>
-          </Card.Body>
-        </Card>
-      </Col>
-    </>
+    <Col key={key} md={3} sm={4} lg={2} className="mb-4 d-flex">
+      <Card className="w-100 h-100">
+        <Card.Img variant="top" src={urlToImages || defaultImage} alt="" />
+        <Card.Body>
+          <Card.Title className=" fs-6">
+            <a href={urls}>{titles}</a>
+          </Card.Title>
+          <Card.Subtitle className="mb-2 text-muted searchable">
+            {date}
+          </Card.Subtitle>
+          <Card.Text className=" text-truncate">{descriptions}</Card.Text>
+          <Button href={urls} variant="primary">
+            Go somewhere
+          </Button>
+        </Card.Body>
+      </Card>
+    </Col>
   );
 }
 

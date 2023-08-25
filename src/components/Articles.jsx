@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TemplateNews from "../assets/Bootstrap/TemplateNews";
-
+import { Row } from "react-bootstrap";
 export default function Articles() {
   const [allData, setAllData] = useState([]);
   const [filteredData, setFilteredData] = useState(allData);
@@ -35,20 +35,22 @@ export default function Articles() {
           onChange={(event) => handleSearch(event)}
         />
       </div>
-      {filteredData.map((article, index) => {
-        return (
-          <>
-            <TemplateNews
-              kunci={index}
-              titles={article.title}
-              descriptions={article.description}
-              urls={article.url}
-              urlToImages={article.urlToImage}
-              date={article.publishedAt}
-            />
-          </>
-        );
-      })}
+      <Row>
+        {filteredData.map((article, index) => {
+          return (
+            <>
+              <TemplateNews
+                key={index}
+                titles={article.title}
+                descriptions={article.description}
+                urls={article.url}
+                urlToImages={article.urlToImage}
+                date={article.publishedAt}
+              />
+            </>
+          );
+        })}
+      </Row>
     </>
   );
 }
